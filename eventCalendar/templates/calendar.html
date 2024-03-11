@@ -1,0 +1,22 @@
+<!-- calendar.html -->
+<html>
+<head>
+    <title>Event Calendar</title>
+</head>
+<body>
+    <h1>Event Calendar</h1>
+    <ul>
+        {% for event in events %}
+        <div class="card">
+            <h5 class="card-header">{{ event.date }}</h5>
+            <div class="card-body">
+              <h5 class="card-title">{{ event.title }}</h5>
+              <p class="card-text">{{ event.description }}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        <li><a href="{% url 'event_detail' event.id %}">{{ event.title }}</a>{{ event.date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
